@@ -119,3 +119,13 @@ main .taskSheet .task i {
     margin: .1rem;
     cursor: pointer;
 }
+
+.test::before {
+    content: "";
+    background-image: url(pics/check.png);
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-size: cover;
+    background-position: center;
+}
