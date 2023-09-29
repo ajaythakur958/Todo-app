@@ -14,32 +14,21 @@
 <body>
     <header>
         <nav>
-            <section>
-                <a href="#home">Home</a>
-                <a href="add">Add New</a>
-                <a href="about">About</a>
-            </section>
+            <h1>ToDo List</h1>
         </nav>
     </header>
     <main>
         <div class="action">
-            <input type="text" placeholder="Type here..">
-            <button><i class="fa-solid fa-plus"></i></button>
+            <input type="text" id="inputBox" placeholder="Type here..">
+            <button onclick="addTask()"><i class="fa-solid fa-plus"></i></button>
         </div>
         <div class="taskSheet">
-            <div class="task">
-                <input type="checkbox">
-                <p>hii</p>
-                <div class="buttons" >
-                    <button id="update"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete"><i class="fa-solid fa-trash"></i></button>
-                </div>
-                <div class="buttons">
-                    <button id="delete"><i class="fa-solid fa-check"></i></button>
-                </div>
-            </div>
-            <button></button>
-
+            <!-- <div class="task">
+                <p class="checked">hii
+                </p>
+                <i id="update" class="fa-solid fa-pen-to-square"></i>
+                <i id="del" class="fa-solid fa-trash"></i>
+            </div> -->
         </div>
     </main>
     <script src="main.js"></script>
