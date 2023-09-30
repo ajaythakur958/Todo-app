@@ -1,7 +1,7 @@
 const inputBox = document.querySelector("#inputBox");
 const taskSheet = document.querySelector(".taskSheet");
 const modal = document.querySelector(".editModal");
-const editText = document.querySelector("#editText");
+const textArea = document.querySelector("#editText");
 
 taskSheet.addEventListener("click", (e) =>{
     if (e.target.tagName === "P"){
@@ -13,6 +13,7 @@ taskSheet.addEventListener("click", (e) =>{
     } else if (e.target.classList[1] === "fa-pen-to-square"){
         modal.classList.add("active");
         e.target.previousElementSibling.setAttribute("id", "currentElem");
+        textArea.value = e.target.previousElementSibling.innerHTML;
 
     }
 
@@ -30,6 +31,8 @@ modal.addEventListener("click", (e) => {
         currentElem.innerHTML = e.target.previousElementSibling.value;
         currentElem.removeAttribute("id","currentElem");
         console.log(currentElem);
+    } else if (e.target.classList[0] === "editModal"){
+        e.target.classList.remove("active");
     }
 })
 
