@@ -1,21 +1,37 @@
 const inputBox = document.querySelector("#inputBox");
 const taskSheet = document.querySelector(".taskSheet");
+const modal = document.querySelector(".editModal");
+const editText = document.querySelector("#editText");
 
 taskSheet.addEventListener("click", (e) =>{
-    console.log(e.target.tagName);
-    console.log(e.target.classList);
     if (e.target.tagName === "P"){
         e.target.classList.toggle("checked");
 
     } else if (e.target.classList[1] === "fa-trash"){
         e.target.parentElement.remove();
         
-    } else if (e.target.classList === "update"){
-        console.log("update");
+    } else if (e.target.classList[1] === "fa-pen-to-square"){
+        modal.classList.add("active");
+        e.target.previousElementSibling.setAttribute("id", "currentElem");
 
     }
 
 }, false);
+
+modal.addEventListener("click", (e) => {
+    if (e.target.classList[1] === "fa-xmark" ){
+        e.target.parentElement.parentElement.classList.remove("active");
+        const currentElem = document.querySelector("#currentElem");
+        currentElem.removeAttribute("id","currentElem");
+        
+    } else if (e.target.classList[1] === "fa-check"){
+        e.target.parentElement.parentElement.classList.remove("active");
+        const currentElem = document.querySelector("#currentElem");
+        currentElem.innerHTML = e.target.previousElementSibling.value;
+        currentElem.removeAttribute("id","currentElem");
+        console.log(currentElem);
+    }
+})
 
 function addTask() {
     if (inputBox.value === "") {
@@ -38,6 +54,8 @@ function addTask() {
         inputBox.value = "";
     }
 }
+
+
 
 function saveData(){
     localStorage.setItem("data", taskSheet.innerHTML);
