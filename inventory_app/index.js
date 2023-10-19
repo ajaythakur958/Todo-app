@@ -1,9 +1,14 @@
-const express = require('express');
+import express from 'express';
+import productController from './src/controllers/products.controller.js';
 
 const server = express();
 
-server.get('/', (req, res)=>{
-    return res.send('node server from get request')
-})
+// creating productController instance
+const productControllers = new productController();
 
-server.listen(3200);
+
+server.get('/', productControllers.getProducts)
+
+server.use(express.static('src/views'))
+
+server.listen(3200, ()=>(console.log("server started at 3200")));
