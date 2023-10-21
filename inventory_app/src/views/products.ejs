@@ -39,30 +39,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>1</th>
-              <td>The Psychology Of Money</td>
-              <td>Timeless lessons on wealth, greed, and happiness doing well with money</td>
-              <td>1000</td>
-              <td><img src="https://m.media-amazon.com/images/I/71g2ednj0JL._SL1500_.jpg" ></td>
-  
-            </tr>
-            <tr>
-              <th>2</th>
-              <td>Stock Investing Mastermind</td>
-              <td>Timeless lessons on wealth, greed, and happiness doing well with money</td>
-              <td>1000</td>
-              <td><img src="https://m.media-amazon.com/images/I/91LxdclLIWL._SL1500_.jpg" ></td>
-  
-            </tr>
-            <tr>
-              <th>3</th>
-              <td>Money Smart in Your 20s & 30s</td>
-              <td>Timeless lessons on wealth, greed, and happiness doing well with money</td>
-              <td>1000</td>
-              <td><img src="https://m.media-amazon.com/images/I/71VgRlE4roL._SL1500_.jpg" ></td>
-  
-            </tr>
+           <% products.forEach(product=>{ %>
+
+              <tr>
+                <th><%= product.id %></th>
+                <th><%= product.name %></th>
+                <td><%= product.desc %></td>
+                <td><%= product.price %></td>
+                <td><img src="<%= product.img %>" ></td>
+              </tr>
+
+            <% }) %>
           </tbody>
         </table>
       </div>
