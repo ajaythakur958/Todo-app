@@ -8,10 +8,11 @@
 
 body {
     font-family: 'Source Sans 3', sans-serif;
+    scroll-behavior: smooth;
 }
 
 header nav {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,28 +26,8 @@ nav h1 {
     font-weight: 800;
 }
 
-/* header nav section {
-    display: flex;
-    width: 30vw;
-    margin-left: 3rem;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-header nav section a {
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    font-size: 1.2rem;
-    padding: .6rem 1.8rem .6rem 1.8rem;
-}
-
-header nav section a:hover {
-    background-color: rgb(250, 250, 250);
-} */
-
 main {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: relative;
     height: 70vh;
     display: flex;
@@ -56,7 +37,7 @@ main {
 }
 
 main .action {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,13 +70,15 @@ main .action button i {
 }
 
 main .taskSheet {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 36vw;
-    height: 40vh;
+    height: 60vh;
+    max-height: 60vh;
+    overflow-y: auto;
 }
 
 main .taskSheet .task {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     margin: 0.5rem;
     justify-content: space-between;
@@ -104,7 +87,7 @@ main .taskSheet .task {
 }
 
 main .taskSheet .task p {
-    border: 2px solid seagreen;
+    /* border: 2px solid seagreen; */
     width: 32vw;
     overflow-y: auto;
     margin: auto;
@@ -114,10 +97,9 @@ main .taskSheet .task p {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    border: 1px solid black;
 }
 
-main p::before{
+main p::before {
     content: '';
     background-image: url(pics/uncheck.jpg);
     position: absolute;
@@ -129,10 +111,11 @@ main p::before{
     top: 29.2%;
 }
 
-main p.checked::before{
+main p.checked::before {
     background-image: url(pics/check.png);
 
 }
+
 main .taskSheet .task .checked {
     text-decoration: line-through;
 }
@@ -144,7 +127,7 @@ main .taskSheet .task i {
     cursor: pointer;
 }
 
-.editModal{
+.editModal {
     position: fixed;
     display: none;
     height: 100%;
@@ -170,14 +153,14 @@ div.active {
     border-radius: 6px;
 }
 
-div #editText{
+div #editText {
     width: 100%;
     height: 70%;
     outline: 0;
     border: none;
     background: transparent;
     font-size: 1.2rem;
-    
+
 }
 
 div .modalContent i {
@@ -187,7 +170,6 @@ div .modalContent i {
     cursor: pointer;
 }
 
-div .modalContent i:hover{
+div .modalContent i:hover {
     background-color: #ebeaea;
 }
-
