@@ -11,16 +11,18 @@ body {
 }
 
 header nav {
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
-    min-height: 10vh;
+    width: 100vw;
     box-shadow: 0 0 2rem 0 rgb(230, 229, 229);
 }
 
 nav h1 {
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 800;
 }
 
 /* header nav section {
@@ -44,21 +46,30 @@ header nav section a:hover {
 } */
 
 main {
+    border: 1px solid red;
+    position: relative;
+    height: 70vh;
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
 }
 
 main .action {
-    margin: 3rem 6rem 3rem 6rem;
+    border: 1px solid blue;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 5vh;
+    width: 20%;
 }
 
 main .action input {
     width: 18rem;
-    height: 2rem;
+    height: 100%;
+    font-size: 1.2rem;
     outline: none;
+    border: none;
     margin-right: 1rem;
 }
 
@@ -73,17 +84,20 @@ main button {
 }
 
 main .action button i {
-    font-size: 2rem;
-    color: rgb(117, 117, 117);
+    font-size: 2.5rem;
+    color: rgb(122, 121, 121);
 }
 
 main .taskSheet {
-    border: 1px solid black;
-    width: 40vw
+    border: 1px solid green;
+    width: 36vw;
+    height: 40vh;
 }
 
 main .taskSheet .task {
-    display: inline-flex;
+    border: 1px solid purple;
+    display: flex;
+    margin: 0.5rem;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -91,6 +105,10 @@ main .taskSheet .task {
 
 main .taskSheet .task p {
     width: 32vw;
+    max-height: 7vh;
+    overflow-y: auto;
+    margin: auto;
+    padding: 1rem;
     text-align: center;
     cursor: pointer;
     overflow: hidden;
@@ -104,7 +122,8 @@ main p::before{
     height: 1rem;
     background-size: cover;
     background-position: center;
-    left: .8rem;
+    left: .2rem;
+    top: 29.2%;
 }
 
 main p.checked::before{
@@ -116,7 +135,7 @@ main .taskSheet .task .checked {
 }
 
 main .taskSheet .task i {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     padding: .4rem;
     margin: .1rem;
     cursor: pointer;
