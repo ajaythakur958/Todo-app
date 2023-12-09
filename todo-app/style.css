@@ -95,7 +95,7 @@ main .taskSheet {
 }
 
 main .taskSheet .task {
-    border: 1px solid purple;
+    border: 2px solid red;
     display: flex;
     margin: 0.5rem;
     justify-content: space-between;
@@ -104,16 +104,19 @@ main .taskSheet .task {
 }
 
 main .taskSheet .task p {
+    border: 2px solid seagreen;
     width: 32vw;
-    max-height: 7vh;
     overflow-y: auto;
     margin: auto;
-    padding: 1rem;
+    padding-left: 1.5rem;
     text-align: center;
     cursor: pointer;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     border: 1px solid black;
 }
+
 main p::before{
     content: '';
     background-image: url(pics/uncheck.jpg);
